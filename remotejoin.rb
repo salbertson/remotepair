@@ -1,0 +1,1 @@
+exec(%(ssh pair@localhost -p 8000 -t '/usr/local/bin/tmux -S /tmp/awesomeness attach'))
