@@ -9,7 +9,7 @@ begin
     puts 'Pairing ...'
     Process.spawn(<<-TMUX)
   osascript -e 'tell app "Terminal"
-  do script "cd #{Dir.pwd} && ruby remotejoin.rb"
+  do script "cd #{Dir.pwd} && remotejoin"
   end tell'
     TMUX
     begin

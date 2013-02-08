@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 fork do
   sleep 1
   exec('chmod 777 /tmp/awesomeness')

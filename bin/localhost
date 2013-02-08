@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require './net_ssh_gateway_patch'
+require 'net_ssh_gateway_patch'
 
 # ssh -nvNT -R 2222:localhost:22 user@50.116.19.132
 begin
@@ -9,7 +9,7 @@ begin
     puts 'Pairing ...'
     Process.spawn(<<-TMUX)
 osascript -e 'tell app "Terminal"
-do script "cd #{Dir.pwd} && ruby localjoin.rb"
+do script "cd #{Dir.pwd} && localjoin"
 end tell'
     TMUX
     begin
