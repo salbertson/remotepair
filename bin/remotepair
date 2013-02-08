@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'remotepair_runner'
+
+RemotepairRunner.new.run(ARGV)
