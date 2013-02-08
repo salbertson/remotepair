@@ -1,11 +1,11 @@
 require './net_ssh_gateway_patch'
 
-# ssh -nvNT -R 2222:localhost:22 desi@50.116.19.132
+# ssh -nvNT -R 2222:localhost:22 user@50.116.19.132
 
 begin
-  gateway = Net::SSH::Gateway.new('50.116.19.132', 'desi', password: 'imawesome')
+  gateway = Net::SSH::Gateway.new('50.116.19.132', ARGV[0])
   gateway.open_remote(22, 'localhost', 2222) do |remote_port, remote_host|
-    puts 'Tunnel is open ...'
+    puts 'Pairing ...'
     Process.spawn(<<-TMUX)
 osascript -e 'tell app "Terminal"
 do script "cd #{Dir.pwd} && ruby localjoin.rb"
